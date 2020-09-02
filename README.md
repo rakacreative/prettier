@@ -1,3 +1,67 @@
+# 🚨 THIS IS A FORK OF PRETTIER 🚨
+
+This is a fork of Prettier which formats HTML (or similar) using the single-attribute-per-line style, when
+there are 2 or more attributes. The official Prettier will follow this same approach, but only once the
+line length reaches the maximum.
+
+From this:
+```html
+<button id="actionDoSomething" class="btn" type="button" @click="action">
+  <span class="btn-inner">Primary Action</span>
+</button>
+```
+
+To this:
+```html
+<button
+  id="actionDoSomething"
+  class="btn"
+  type="button"
+  @click="action"
+>
+  <span class="btn-inner">Primary Action</span>
+</button>
+```
+
+This fork simply adds 1 new line of code to Prettier's HTML printer. All HTML-like languages should
+be supported. All Prettier options should function exactly the same as they do with the upstream Prettier.
+
+## Installing
+
+Use the following to install this package as an alias of Prettier. Anything which searches `node_modules`
+for Prettier will use this fork instead.
+
+```bash
+npm install --save-dev prettier@npm:@rakacreative/prettier
+```
+
+**IMPORTANT:** npm's alias feature does not currently symlink package binaries into
+`node_modules/.bin`. You can still execute this fork's CLI by directly accessing the
+`bin-prettier.js` file, i.e. `node_modules/prettier/bin-prettier.js`.
+
+## Credits
+Credit for the required changes to achieve the desired attribute formatting goes to
+[kankje](https://github.com/kankje) via
+[this pull
+request](https://github.com/prettier/prettier/pull/6644/commits/1e85e439cacea189db4516965a3088a3a94b0ac2#diff-8b490542076a1de9d16d350dd3f39420).
+
+## Additional Resources
+
+This package may no longer be necessary if any of the following are merged into the upstream
+Prettier:
+- https://github.com/prettier/prettier/issues/5919
+- https://github.com/prettier/prettier/pull/6113
+- https://github.com/prettier/prettier/pull/6644/commits/1e85e439cacea189db4516965a3088a3a94b0ac2
+
+Additional discussion about the subject:
+- https://github.com/prettier/prettier/issues/5501
+- https://github.com/prettier/prettier/issues/3101
+
+
+<hr>
+<br>
+<br>
+
 ![Prettier Banner](https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-banner-light.png)
 
 <h2 align="center">Opinionated Code Formatter</h2>
