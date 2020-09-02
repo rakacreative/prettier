@@ -718,7 +718,7 @@ function printAttributes(path, options, print) {
   const parts = [
     indent(
       concat([
-        forceNotToBreakAttrContent ? " " : line,
+        forceNotToBreakAttrContent ? " " : (node.attrs.length > 1 ? hardline : line),
         join(line, printedAttributes),
       ])
     ),
