@@ -39,6 +39,13 @@ npm install --save-dev prettier@npm:@rakacreative/prettier
 `node_modules/.bin`. You can still execute this fork's CLI by directly accessing the
 `bin-prettier.js` file, i.e. `node_modules/prettier/bin-prettier.js`.
 
+You can install `@rakacreative/prettie-bin` to workaround this issue. It will create a bin symlink
+for `prettier/bin-prettier.js`, allowing it to be used properly via npx (`npx prettier`).
+
+```bash
+npm install --save-dev @rakacreative/prettier-bin
+```
+
 ## Credits
 Credit for the required changes to achieve the desired attribute formatting goes to
 [kankje](https://github.com/kankje) via
